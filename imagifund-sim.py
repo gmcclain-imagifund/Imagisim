@@ -20,18 +20,6 @@ campaign_goal = 1200
 bid_increment = 0.01  
 # The total duration of the auction phase in days
 auction_duration_days = 30
-# The probability of a user being a conservative bidder
-conservative_probability = 0.50 
-# The probability of a user being a sniper bidder
-sniper_probability = 0.10 
-# The probability of a user being an impulse bidder
-impulse_probability = 0.40 
-# Conservative bidders stop if the price exceeds this amount
-conservative_threshold = 50  
-# 25% chance for snipers to place a bid
-sniper_chance = 0.25  
-# 20% chance for impulse bidders to place a bid
-impulse_chance = 0.20  
 
 # Bidder Definitions 
 # Sniper Bidder: A sniper bidder waits until the last possible moment to place their bid. 
@@ -45,6 +33,19 @@ impulse_chance = 0.20
 # Conservative Bidder: A conservative bidder bids cautiously and stops bidding when the price reaches a certain threshold. 
 # They are mindful of the auction price and their budget, preferring not to overextend themselves.
 
+# The probability of a user being a conservative bidder
+conservative_probability = 0.50 
+# The probability of a user being a sniper bidder
+sniper_probability = 0.10 
+# The probability of a user being an impulse bidder
+impulse_probability = 0.40 
+# Conservative bidders stop if the price exceeds this amount
+conservative_threshold = 50  
+# 25% chance for snipers to place a bid
+sniper_chance = 0.25  
+# 20% chance for impulse bidders to place a bid
+impulse_chance = 0.20  
+
 #Campaign Rate Parameters
 campaign_rb_ps_rate = .10
 campaign_discout_promo_rate = .80
@@ -55,6 +56,8 @@ charity_amount_rate = .10
 overage_profit_rate = .30
 overage_operating_costs_rate = .10
 
+
+#####################################DO NOT TOUCH BELOW THIS LINE########################################################
 
 # Generate users with random money in increments of 20
 user_money = np.random.choice(range(min_money, max_money + increment, increment), num_users)
