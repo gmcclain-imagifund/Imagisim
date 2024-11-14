@@ -8,7 +8,7 @@ pip install numpy pandas
 
 ## Defining Parameters
 
-```
+```python
 # Parameters
 num_users = 2500
 min_money = 20
@@ -40,7 +40,7 @@ overage_operating_costs_rate = 0.10
 
 ## Generating User Data
 Create a DataFrame to store user data with randomized money values
-```
+```python
 user_money = np.random.choice(range(min_money, max_money + increment, increment), num_users)
 user_data = pd.DataFrame({
     'User_ID': range(num_users),
@@ -53,7 +53,7 @@ user_data = pd.DataFrame({
 
 ## Pledging Phase
 Users pledge money to the campaign based on their available funds and the predefined packages:
-```
+```python
 # Determine users who will pledge (using pledge_rate)
 num_pledging_users = int(num_users * pledge_rate)
 pledging_users = np.random.choice(user_data.index, num_pledging_users, replace=False)
@@ -78,12 +78,12 @@ pledge_overage = max(0, total_pledged_amount - campaign_goal)
 ```
 
 ## Pledge to Bid Coversion
-```
+```python
 user_data['Bids'] = user_data['Total_Pledges']
 ```
 
 ## Simulating Auction Phase
-```
+```python
 # Define user bidding behaviors
 probabilities = np.array([conservative_probability, sniper_probability, impulse_probability])
 probabilities /= probabilities.sum()
@@ -161,7 +161,7 @@ auction_df = pd.DataFrame(auction_data, columns=['Day', 'User_ID', 'Bid_Price'])
 ```
 
 ## Calculations
-```
+```python
 # Calculate and print required outputs
 total_bidders = auction_df['User_ID'].nunique()
 total_pledgers = len(pledging_users)
@@ -199,7 +199,7 @@ perc_all_three = (all_three / three_category_users) * 100 if three_category_user
 ```
 
 ## Outputs
-```
+```python
 # Campaign Output
 print("\n**Campaign and Pledging Statistics**")
 print("Total Platform Users: ", num_users)
