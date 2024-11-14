@@ -1,6 +1,6 @@
 ## Dependencies:
-### NumPy - For numerical operations.
-### Pandas - For data manipulation and analysis
+### [NumPy](https://pypi.org/project/numpy/) - For numerical operations.
+### [Pandas](https://pypi.org/project/pandas/) - For data manipulation and analysis
 ## Install dependencies
 ```
 pip install numpy pandas
